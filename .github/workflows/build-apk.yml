@@ -23,8 +23,8 @@ jobs:
         run: |
           D=android/app/src/main/java/com/rohanchauhan/dailyroutine
           mkdir -p $D
-          cp native/*.java $D/
-          python3 native/patch_manifest.py android/app/src/main/AndroidManifest.xml
+          cp *.java $D/
+          python3 patch_manifest.py android/app/src/main/AndroidManifest.xml
           grep -c AlarmService android/app/src/main/AndroidManifest.xml
       - run: npx cap sync android
       - name: Build debug APK
